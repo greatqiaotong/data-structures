@@ -16,13 +16,13 @@ class DoublyLinkedList:
             return self.head.data
         else:
             return False
-    
+
     def is_empty(self):
         if self.head is None:
             return True
         else:
             return False
-    
+
     def insert_tail(self, data):
         temp_node = Node(data)
         if self.is_empty():
@@ -48,13 +48,13 @@ class DoublyLinkedList:
             node_to_remove.next_element = None
         self.length -= 1
         return node_to_remove.data
-    
+
     def tail_node(self):
         if self.head is not None:
             return self.tail.data
         else:
             return False
-    
+
     def __str__(self):
         val = ""
         if self.is_empty():
@@ -68,4 +68,3 @@ class DoublyLinkedList:
             temp = temp.next_element
         val = val + str(temp.data) + "]"
         return val
-    

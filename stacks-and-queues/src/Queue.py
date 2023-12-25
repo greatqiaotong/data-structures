@@ -4,34 +4,34 @@ from src.DoublyLinkedList import DoublyLinkedList
 class MyQueue:
     def __init__(self):
         self.items = DoublyLinkedList()
-    
+
     def is_empty(self):
         return self.items.length == 0
-    
+
     def front(self):
         if self.is_empty():
             return None
         return self.items.get_head()
-    
+
     def rear(self):
         if self.is_empty():
             return None
         return self.items.tail_node()
-    
+
     def size(self):
         return self.items.length
-    
+
     def enqueue(self, value):
         return self.items.insert_tail(value)
-    
+
     def dequeue(self):
         return self.items.remove_head()
-    
+
     def print_list(self):
         print(self.items.__str__())
 
 
-if __name__ == "__main__" :
+if __name__ == "__main__":
     queue_obj = MyQueue()
     print("queue.enqueue(2);")
     queue_obj.enqueue(2)
@@ -43,9 +43,9 @@ if __name__ == "__main__" :
     queue_obj.enqueue(8)
     print("queue.enqueue(10);")
     queue_obj.enqueue(10)
-    
+
     queue_obj.print_list()
-    
+
     print("is_empty(): " + str(queue_obj.is_empty()))
     print("front(): " + str(queue_obj.front()))
     print("rear(): " + str(queue_obj.rear()))
