@@ -24,7 +24,7 @@ Queues implement the FIFO (*First in First Out*) method.
 
 Queues are used when:
 * We want to prioritise something over another
-* A resource is shred between multiple devices
+* A resource is shared between multiple devices
 
 A typical Queue needs the following set of functions to work perfectly:
 
