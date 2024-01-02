@@ -7,9 +7,10 @@ So the element that was pushed last to the stack has to be the smallest.
 - Output: The stack with all its elements sorted in descending order.
 """
 from src.Stack import MyStack
+from typing import Any
 
 
-def sort_stack(stack: MyStack) -> MyStack:
+def sort_stack_with_temp_stack(stack: MyStack) -> MyStack:
     temp_stack = MyStack()
     while not stack.is_empty():
         value = stack.pop()
@@ -22,3 +23,19 @@ def sort_stack(stack: MyStack) -> MyStack:
     while not temp_stack.is_empty():
         stack.push(temp_stack.pop())
     return stack
+
+
+def sort_stack_recursive(stack: MyStack) -> MyStack:
+    if not stack.is_empty():
+        value = stack.pop()
+        sort_stack_recursive(stack)
+        insert(stack, value)
+
+
+def insert(stack: MyStack, value: Any) -> MyStack:
+    if stack.is_empty() or value < stack.peek():
+        stack.push(value)
+    else:
+        temp = stack.pop()
+        insert(stack, value)
+        stack.push(temp)
