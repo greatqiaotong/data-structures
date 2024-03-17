@@ -16,4 +16,4 @@ def simple_graph():
 
 def test_bfs_traversal(simple_graph):
     result = bfs_traversal(simple_graph, 0)
-    assert result =="02143"
+    assert result == "02143"

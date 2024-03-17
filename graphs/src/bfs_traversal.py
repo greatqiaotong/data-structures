@@ -6,7 +6,7 @@ def bfs_traversal(g: Graph, source: int) -> str:
     num_of_vertices = g.vertices
     if num_of_vertices == 0:
         return result
-    
+
     visited = [False] * num_of_vertices
     result, visited = bfs_traversal_helper(g, source, visited)
 
@@ -15,9 +15,11 @@ def bfs_traversal(g: Graph, source: int) -> str:
             result_new, visited = bfs_traversal_helper(g, i, visited)
             result += result_new
     return result
-    
 
-def bfs_traversal_helper(g: Graph, source: int, visited: list[bool]) -> tuple[str, list]:
+
+def bfs_traversal_helper(
+    g: Graph, source: int, visited: list[bool]
+) -> tuple[str, list]:
     result = ""
     queue = MyQueue()
     queue.enqueue(source)

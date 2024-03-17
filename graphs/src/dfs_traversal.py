@@ -6,7 +6,7 @@ def dfs_traversal(g: Graph, source: int) -> str:
     num_of_vertices = g.vertices
     if num_of_vertices == 0:
         return result
-    
+
     visited = [False] * num_of_vertices
     result, visited = dfs_traversal_helper(g, source, visited)
     for i in range(num_of_vertices):
@@ -16,7 +16,9 @@ def dfs_traversal(g: Graph, source: int) -> str:
     return result
 
 
-def dfs_traversal_helper(g, source, visited) -> tuple[str, list]:
+def dfs_traversal_helper(
+    g: Graph, source: int, visited: list[bool]
+) -> tuple[str, list]:
     result = ""
     stack = MyStack()
     stack.push(source)
